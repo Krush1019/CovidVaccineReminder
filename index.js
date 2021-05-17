@@ -28,17 +28,18 @@ var requestLoop = setInterval(function () {
         // console.log(body);
         if (body.centers) {
           var text =
-            "hello everyone, new vaccine schedule available here is the details :\n";
+            "hello everyone, new vaccine schedule available here is the details :\n\n";
           body.centers.forEach((center) => {
             let cntr = center.name;
-            text += `center name :${cntr}\nAddress :${center.address}\n \n`;
+            text += `center name :${cntr}\nAddress :${center.address}\n`;
 
             center.sessions.forEach((session) => {
-              text += `\n date :${session.date}\ndose 1 :${session.available_capacity_dose1}\ndose 2 :${session.available_capacity_dose2}\nmin age :${session.min_age_limit} \n------------------`;
+              text += `\ndate :${session.date}\ndose 1 :${session.available_capacity_dose1}\ndose 2 :${session.available_capacity_dose2}\nmin age :${session.min_age_limit} \n------------------`;
             });
             // if (center.sessions[0].available_capacity_dose1) {
             //   console.log(center.name);
             // }
+            text += "\n=====================================\n";
           });
           console.log(text);
           // console.log("sucess!");
