@@ -64,6 +64,7 @@ var loopfun = function () {
 							const chatId = process.env.CHATID;
 							bot.sendMessage(chatId, text);
 							console.log(text);
+							txtContain = text;
 						}
 						intval = 60000;
 						clearInterval(requestLoop);
